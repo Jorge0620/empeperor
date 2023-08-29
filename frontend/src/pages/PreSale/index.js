@@ -1,8 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import { BiHomeSmile } from "react-icons/bi";
-import ChipsImg from '../../assets/images/new/Casino Chips.png'
-import CoinImg from '../../assets/images/new/Clubs Casino Chip.png'
 import PinkSaleImg from '../../assets/images/pinksale (1).png'
 import DexViewImg from '../../assets/images/dexview1.png'
 import PancakeImg from '../../assets/images/pancakeswap-095a205c.png'

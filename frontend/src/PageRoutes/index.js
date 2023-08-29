@@ -11,7 +11,6 @@ import PreSale from "../pages/PreSale";
 import ReferralPage from "../pages/ReferralPage";
 import Escrow from "../pages/Escrow";
 
-import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from 'react';
 import {connect} from 'react-redux'
 import Sidebar from "../layout/Sidebar";
@@ -26,14 +25,6 @@ import './index.scss';
 const PageRoutes = (props) => {
   const [pageData, setPageData] = useState(titleDescriptions.home)
   const cookies = new Cookies();
-  const notify = () => toast.info(popup, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-  });
   const location = useLocation();
   
   useEffect(async () => {

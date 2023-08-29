@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './Header.scss';
-import MooningLogo from '../../assets/images/logo/textlogo.png';
 import LogoHeader from './LogoHeader.js';
 import VectorLogo from '../../assets/images/logo/empepelogo.png';
 

@@ -2,7 +2,6 @@ import React from 'react';
 import './index.scss'
 import '../../../style/base.scss'
 import ChipsImg from '../../../assets/images/new/Casino Chips.png'
-import CoinImg from '../../../assets/images/new/Clubs Casino Chip.png'
 import { WhitePaperLink } from '../../../utils/data'
 
 const OurStory = () => {
@@ -15,7 +14,6 @@ const OurStory = () => {
 
 The project is network agnostic in terms of deposit and withdraw function. It will be integrated with several wallets on several networks such as ERC, BSC, Solana, and Polygon. This will reduce friction and gas fees. User's also do not need to bridge their tokens to be able to play in the platform as long as they use the 4 initial networks. </p>
                 
-                <img src={CoinImg} className='coin-left-img'></img>
                 <img src={ChipsImg} className='chips-right-img'></img>
             </div>
         </div>

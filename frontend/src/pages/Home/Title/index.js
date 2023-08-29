@@ -5,7 +5,6 @@ import '../../../style/base.scss'
 
 import PepeImg from '../../../assets/images/NoBGLogoVersion.png'
 import CasinoMachineImg from '../../../assets/images/new/Casino Machine.png'
-import SpaceImg from '../../../assets/images/ox.webp'
 import UniswapImg from '../../../assets/images/Uniswap-UNI.png'
 import { WhitePaperLink, UniswapLink } from '../../../utils/data'
 

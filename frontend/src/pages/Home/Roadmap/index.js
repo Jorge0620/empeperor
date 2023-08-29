@@ -1,9 +1,6 @@
 import React from 'react';
 import './index.scss'
 import '../../../style/base.scss'
-import TreeImg from '../../../assets/images/tree.png'
-import PandaImg from '../../../assets/images/Panda.png'
-import RotateSpaceImg from '../../../assets/images/rotatespace.png'
 
 const Roadmap = () => {
     return (
