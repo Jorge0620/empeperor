@@ -1,0 +1,35 @@
+@import '../../style/color.scss';
+
+.contact-us-page {
+    margin-top: 50px;
+    .title {
+        width: 100%;
+        text-align: center;
+        font-size: 60px !important;
+    }
+    .home-link {
+        position: absolute;
+        right: 30px;
+        font-size: 50px;
+        top: 20px;
+        color: $content-border-color;
+        background-color: transparent;
+        border: none;
+        :hover {
+            color: $content-border-color1;
+        }
+    }
+    form {
+        display: grid;
+    }
+    .send-message-btn {
+        margin-top: 30px;
+        padding: 5px 10px;
+        border: 2px solid $liner-color1;
+        border-radius: 20px;
+        background-color: rgba(255, 109, 96, 0.2);
+        color: white;
+        font-size: 16px;
+        align-self: center;
+    }
+}

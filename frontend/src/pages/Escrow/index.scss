@@ -1,0 +1,26 @@
+.escrow-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .escrow-img {
+        width: 150px;
+    }
+    .page-title-text {
+        color: white;
+        font-family: 'Limelight', cursive;
+        font-size: 60px;
+        margin-bottom: 0;
+    }
+    .coming-soon-img {
+        margin-top: 30px;
+        width: 400px;
+    }
+    .about-text {
+        margin-top: 30px;
+        width: 600px;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+}

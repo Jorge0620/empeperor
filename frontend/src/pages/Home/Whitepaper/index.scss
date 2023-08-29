@@ -1,0 +1,52 @@
+@import '../../../style/color.scss';
+
+.roadmap {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            display: block;
+            text-align: center;
+        }
+        .text {
+            font-size: 60px;
+        }
+    }
+    .description {
+        margin-top: 20px;
+        text-align: center;
+        padding: 0 10%;
+        color: white;
+        font-size: 20px;
+    }
+    .phases {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+        .phase {
+            width: 250px;
+            height: 400px;
+            background-color: rgba(60, 79, 91, 0.6);
+            border: 2px solid $background-color3;
+            padding: 16px;
+            border-radius: 10px;
+            .title {
+                color: $liner-color2;
+                padding: 20px;
+                font-size: 26px;
+            }
+            .item {
+                padding: 8px;
+                color: white;
+                font-size: 16px;
+            }
+        }
+    }
+}

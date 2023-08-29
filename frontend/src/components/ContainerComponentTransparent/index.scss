@@ -1,0 +1,9 @@
+@import '../../style/color.scss';
+
+.custom-container-transfer {
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid $content-border-color2;
+    border-radius: 10px;
+    padding: 20px;
+    /* overflow: hidden; */
+}

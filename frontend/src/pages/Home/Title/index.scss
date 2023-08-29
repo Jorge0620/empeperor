@@ -1,0 +1,118 @@
+@import '../../../style/color.scss';
+
+.title-content {
+    display: flex;
+    height: 100vh !important;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .social-link {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        
+        border: 1px solid $liner-color1;
+        border-radius: 5px;
+        overflow: hidden;
+        :hover {
+            background-color: rgba(248, 152, 62, 0.1);
+        }
+        img {
+            width: 70px;
+            color: $liner-color5;
+        }
+    }
+    .title {
+        margin-top: 30vh;
+        //color: $text-gradient;
+        .pepe-img {
+            width: 80px;
+            margin-top: -70px;
+            margin-right: 20px;
+            display: none;
+            @media only screen and (min-width: 1000px) {
+                width: 140px;
+                height: 140px;
+                display: inline;
+            }
+        }
+        .text {
+            z-index: 3;
+            font-size: 50px;
+            font-weight: inherit;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 300px;
+            line-height: 1;
+            @media only screen and (min-width: 600px) {
+                font-size: 100px;
+            }
+            @media only screen and (min-width: 1000px) {
+                font-size: 120px;
+            }
+        }
+        
+    }
+    .casino-machine {
+        width: 150px;
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        @media only screen and (min-width: 600px) {
+            width: 220px;
+        }
+        @media only screen and (min-width: 1000px) {
+            width: 300px;
+        }
+    }
+    .race-img {
+        position: absolute;
+        left: 0;
+        bottom: 30vh;
+        width: 500px;
+        z-index: 0;
+        opacity: 0.3;
+        @media only screen and (min-width: 600px) {
+            width: 700px;
+            bottom: 100px;
+        }
+        @media only screen and (min-width: 1000px) {
+            width: 900px;
+        }
+    }
+    .description {
+        color: white;
+        text-align: center;
+        width: 500px;
+        font-size: 20px;
+        @media only screen and (min-width: 600px) {
+            font-size: 30px;
+        }
+    }
+    .litepaper-btn {
+        margin: 0;
+        margin-top: 30px;
+        padding: 5px 18px;
+        border: 2px solid $liner-color1;
+        border-radius: 20px;
+        background-color: rgba(255, 109, 96, 0.2);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .litepaper-link {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        :hover {
+            text-shadow: 2px 2px black;
+            text-decoration: underline;
+            color: $liner-color2;
+        }
+    }
+}

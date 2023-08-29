@@ -1,0 +1,56 @@
+@import '../../../style/color.scss';
+
+.our-community {
+    margin-top: 20px;
+    padding: 30px;
+    padding-bottom: 60px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 600px) {
+        margin-top: 80px;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        span {
+            z-index: 1;
+        }
+        .top {
+
+        }
+        .text {
+            font-size: 60px;
+        }
+        .description {
+            color: white;
+        }
+        
+    }
+    .rocket-img {
+        width: 130px;
+        left: calc(50% + 200px);
+        z-index: 0;
+    }
+    .contact-content {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .contact-btn {
+            padding: 5px 10px;
+            text-decoration-line: underline;
+            
+            color: white;
+            font-size: 16px;
+        }    
+    }
+    
+}

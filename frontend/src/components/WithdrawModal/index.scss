@@ -1,0 +1,70 @@
+@import '../../style/color.scss';
+
+.withdraw-modal {
+    .modal-content {
+        width: 500px;
+        .withdraw-amount {
+            position: relative;
+        }
+        .pending-spinner {
+            font-size: 20px;
+            width: 30px !important;
+            height: 30px !important;
+        }
+        .withdraw-amount-input {
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid $content-border-color1;
+            border-radius: 5px;
+            color: $liner-color2;
+            &:focus {
+                border-color: $content-border-color1 !important;
+                outline: none !important;
+            }
+        }
+        .max-btn {
+            position: absolute;
+            right: 0;
+            transform: translateY(-50%);
+            top: 50%;
+            color: white;
+            font-size: 16px;
+        }
+        .sub-title {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        .withdraw-btn {
+            margin-top: 20px;
+            height: 50px;
+            width: 100%;
+            background-image: $linear-gradient1;
+        }
+        .recent-transaction-history {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid $content-border-color1;
+            border-radius: 5px;
+            p {
+                margin-bottom: 0;
+            }
+            .status {
+                display: flex;
+                justify-content: space-between;
+                
+            }
+            .hash-content {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,56 @@
+@import '../../../style/color.scss';
+
+.vibing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 70px;
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            display: block;
+            text-align: center;
+        }
+        .text {
+            font-size: 60px;
+        }
+    }
+    .phases {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15%;
+        padding: 30px;
+        .phase {
+            margin: 20px;
+            width: 250px;
+            height: 400px;
+            //background-color: rgba(60, 79, 91, 0.6);
+            border: 2px solid rgb(201, 201, 201);
+            padding: 16px 32px;
+            border-radius: 10px;
+            p {
+                margin: 0;
+            }
+            ul {
+                padding: 10px;
+            }
+            .title {
+                color: $liner-color2;
+                padding: 20px;
+                font-size: 20px;
+                white-space: nowrap;
+            }
+            .item {
+                padding: 8px;
+                color: white;
+                font-size: 16px;
+                
+            }
+        }
+    }
+}

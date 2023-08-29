@@ -1,0 +1,81 @@
+@import '../../../style/color.scss';
+
+.our-partners {
+    //background-color: $background-color3;
+    padding: 0px;
+    margin: 30px;
+    margin-top: 40px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    @media only screen and (min-width: 600px) {
+        margin-top: 80px;
+        gap: 80px;
+    }
+    .pp-crown-img {
+        width: 100px;
+        border-radius: 50%;
+        z-index: 0;
+        @media only screen and (min-width: 600px) {
+            width: 200px;
+        }
+    }
+    .background-content {
+
+        //background-image: url('../../../assets/images/texture.png');
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .token-address {
+            z-index: 1;
+            color: $liner-color2;
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+            overflow-wrap: anywhere;
+            margin-bottom: 20px;
+            @media only screen and (min-width: 600px) {
+                font-size: 20px;
+            }
+        }
+        .links-content {
+            z-index: 1;
+            display: flex;
+            gap: 30px;
+            .social-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+                
+                border: 1px solid $liner-color1;
+                border-radius: 5px;
+                overflow: hidden;
+                :hover {
+                    background-color: rgba(248, 152, 62, 0.1);
+                }
+                img {
+                    width: 70px;
+                    color: $liner-color5;
+                }
+            }
+            .telegram {
+                color: $liner-color1;
+            }
+            .twitter {
+                color: $liner-color2;
+            }
+        }
+        
+    }
+    
+}

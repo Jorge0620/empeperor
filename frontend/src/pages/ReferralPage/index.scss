@@ -1,0 +1,111 @@
+@import '../../style/color.scss';
+
+.referral-page {
+    padding: 30px;
+    .wallet-address {
+        color: white;
+        font-size: 20px;
+        margin: 0px 0 20px 0;
+    }
+    .disconnect-btn {
+        margin-top: 10px !important;
+    }
+    .wallet-connect-btn {
+        margin-top: 20px !important;
+    }
+    .referral-info {
+        width: 400px;
+    }
+    .title {
+        .user-name {
+            font-size: 40px;
+        }
+    }
+    .content-title {
+        color: $liner-color2;
+        font-size: 30px;
+    }
+    .info-content {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        .ref-deposit-history {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sub-info {
+            margin-bottom: 10px;
+            .info-title {
+                color: white;
+            }
+            .info-value {
+                width: 100%;
+                padding-left: 30px;
+                color: $liner-color5;
+                font-size: 20px;
+            }
+        }
+        .btns {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            .deposit-btn {
+                color: white;
+                border: 1px solid $content-border-color1;
+                border-radius: 10px;
+                background: $liner-color3;
+                padding: 5px 10px;
+                &:hover {
+                    background-color: $liner-color4;
+                }
+            }
+            .withdraw-btn {
+                color: white;
+                border: 1px solid $content-border-color1;
+                border-radius: 10px;
+                background: $liner-color5;
+                padding: 5px 10px;
+                &:hover {
+                    background-color: $liner-color1;
+                }
+            }
+        }
+        .total-history {
+            display: flex;
+            justify-content: space-between;
+        }
+        p {
+            margin: 0;
+        }
+        .copy-referral {
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background: $liner-color3;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            a {
+                width: calc(100% - 50px);
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .link-copy {
+                color: $liner-color1;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+        .rank-image {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .referral-history {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        min-height: calc(100vh - 548px);
+    }
+}

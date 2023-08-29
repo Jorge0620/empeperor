@@ -1,0 +1,105 @@
+@import '../style/color.scss';
+
+.text-apple-90 {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.description-text {
+    font-family: Outfit, sans-serif !important;
+}
+.gradient-text-1 {
+    width: fit-content;
+    background: $text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.title-text {
+    font-family: 'Bauhaus', "sans-serif";
+}
+.center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.monkey-page {
+    height: 100%;
+    
+}
+.white-text {
+    color: white;
+}
+body {
+    // background-image: url(../assets/images/texture.png);
+    background-repeat: repeat;
+}
+.empeperor-btn {
+    margin: 0 !important;
+    margin-top: 30px !important;
+    padding: 5px 18px !important;
+    border: 2px solid $liner-color1 !important;
+    border-radius: 20px !important;
+    background-color: rgba(255, 109, 96, 0.2) !important;
+    color: white !important;
+    font-size: 20px !important;
+    text-decoration: none !important;
+    font-family: Outfit, sans-serif !important;
+    &:hover {
+        background-color: rgba(250, 161, 134, 0.2) !important;
+    }
+}
+.empeperor-table {
+    background-color: transparent !important;
+    th, td {
+        font-family: Outfit, sans-serif !important;
+        padding: 10px;
+        border-bottom: none;
+    }
+    td {
+        color: white;
+    }
+    th {
+        background-color: $liner-color4 !important;
+    }
+    tr:nth-child(even) {
+        background: $linear-gradient2;
+    }
+}
+.empeperor-modal {
+    .modal-content {
+        padding: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        
+        box-shadow: 24px;
+        background: linear-gradient($background-color3, $background-color3) padding-box,
+            $linear-gradient1 border-box;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        .modal-header {
+            margin-bottom: 20px;
+            .title {
+                color: $liner-color5;
+                font-size: 30px;
+            }
+        }
+    }
+}
+.white-text {
+    color: white;
+}
+.red-text {
+    color: red;
+}
+.green-text {
+    color: green;
+}
+.greenyellow-text {
+    color: greenyellow;
+}
+.Toastify__progress-bar {
+    background: $content-border-color !important;
+}
