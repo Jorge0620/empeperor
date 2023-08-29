@@ -38,6 +38,12 @@ const PageRoutes = (props) => {
     else if(location.pathname.toLowerCase().includes("sports-betting")){
       setPageData(titleDescriptions.sportsBetting)
     }
+    else if(location.pathname.toLowerCase().includes("referral")){
+      setPageData(titleDescriptions.referral)
+    }
+    else if(location.pathname.toLowerCase().includes("escrow")){
+      setPageData(titleDescriptions.escrow)
+    }
   }, [location]);
   const setRefCookie = (refCode) => {
     let d = new Date();

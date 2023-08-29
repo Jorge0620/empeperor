@@ -11,10 +11,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useMediaQuery } from "react-responsive";
 
 import { metaMask, metaMaskHooks } from '../../connectors/Metamask.js'
 import { usdSwapPrice } from '../../utils/contractData';
-import ContainerComponentTransparent from '../../components/ContainerComponentTransparent';
+import ContainerComponent from '../../components/ContainerComponent';
 import { copyTextToClipboard } from '../../actions/globalActions';
 import { showDepositModal, showWithdrawModal, getUsdBalance, popup } from '../../actions/gameActions';
 import IronRankImg from '../../assets/images/Ranks/0Iron.png'
@@ -47,7 +48,7 @@ const ReferralPage = (props) => {
 
     const accounts = useAccounts()
     const [referralLink, setReferralLink] = useState("")
-    
+    const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
     useEffect(() => {
         if(refCode !== '') {
             setReferralLink(window.location.origin + '/home?ref=' + refCode)
@@ -81,15 +82,27 @@ const ReferralPage = (props) => {
     }));
 
     function createData(NAME, AMOUNT, CASJBACL, DATE_TIME) {
-        return { NAME, AMOUNT, CASJBACL, DATE_TIME };
+        return { address: NAME, amount: AMOUNT, cashback:CASJBACL, createdAt:DATE_TIME };
     }
       
     const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24),
-        createData('Ice cream sandwich', 237, 9.0, 37),
-        createData('Eclair', 262, 16.0, 24),
-        createData('Cupcake', 305, 3.7, 67),
-        createData('Gingerbread', 356, 16.0, 49),
+        createData('Frozen yoghurt', 159, 6.0, '24T'),
+        createData('Ice cream sandwich', 237, 9.0, '37T'),
+        createData('Eclair', 262, 16.0, '24T'),
+        createData('Cupcake', 305, 3.7, '67T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
+        createData('Gingerbread', 356, 16.0, '49T'),
     ];
 
     const connectToMetamask = () => {
@@ -148,17 +161,19 @@ const ReferralPage = (props) => {
              {/* <div className='title'>
                 <span className='user-name title-text gradient-text-1'>Hello Allan</span>
             </div> */}
-            {
+            {/* {
                 accounts && accounts.length > 0
                     // ?   <div>
                     //         <p className='wallet-address description-text'>{accounts[0]}</p>
                     //         <Button className='empeperor-btn disconnect-btn' onClick={()=>disConnectMetamask()}>DISCONNECT</Button>
                     //     </div>
-                    ?   <p className='wallet-address description-text'>{accounts[0]}</p>
-                    :   <Button className='empeperor-btn wallet-connect-btn' onClick={()=>connectToMetamask()}>CONNECT WALLET</Button>
-            }
+                    ?   isMobile
+                        ?   <p className='wallet-address description-text'>{`${accounts[0].substring(0, 15)}...${accounts[0].slice(-5)}`}</p>
+                        :   <p className='wallet-address description-text'>{accounts[0]}</p>
+                    :   <></>
+            } */}
             <div className='info-content'>
-                <ContainerComponentTransparent className="user-info">
+                <ContainerComponent className="user-info">
                     <p className='content-title title-text'>assets</p>
                     <div className='sub-info'>
                         <p className='info-title description-text'>Balance</p>
@@ -172,8 +187,8 @@ const ReferralPage = (props) => {
                         <Button className='deposit-btn description-text' onClick={()=>clickDepositBtn()}>DEPOSIT</Button>
                         <Button className='withdraw-btn description-text' onClick={()=>clickWithdrwaBtn()}>WITHDRAW</Button>
                     </div>
-                </ContainerComponentTransparent>
-                <ContainerComponentTransparent className="referral-info">
+                </ContainerComponent>
+                <ContainerComponent className="referral-info">
                     <p className='content-title title-text'>referral code</p>
                     <div className='copy-referral'>
                         {
@@ -201,14 +216,38 @@ const ReferralPage = (props) => {
                         </div>
                         <img className='rank-image' src={rankImgs[rank]}></img>
                     </div>
-                </ContainerComponentTransparent>
+                </ContainerComponent>
                 
             </div>
-                <ContainerComponentTransparent className="referral-history">
+                <ContainerComponent className="referral-history">
                     <p className='content-title title-text'>referral history</p>
                     <TableContainer component={Paper} className='empeperor-table'>
                         <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                            <TableHead>
+                            <tr>
+                                <th>NAME</th>
+                                {refRewards.map((row) => (
+                                    <td>{row.address}</td>
+                                ))}
+                            </tr>
+                            <tr>
+                                <th>AMOUNT</th>
+                                {refRewards.map((row) => (
+                                    <td>{row.amount}</td>
+                                ))}
+                            </tr>
+                            <tr>
+                                <th>%&nbsp;CASHBACK</th>
+                                {refRewards.map((row) => (
+                                    <td>{row.cashback}</td>
+                                ))}
+                            </tr>
+                            <tr>
+                                <th>DATE/TIME</th>
+                                {refRewards.map((row) => (
+                                    <td>{(row.createdAt.split('T'))[0]}</td>
+                                ))}
+                            </tr>
+                            {/* <TableHead>
                                 <TableRow>
                                     <StyledTableCell>NAME</StyledTableCell>
                                     <StyledTableCell align="left">AMOUNT</StyledTableCell>
@@ -227,10 +266,10 @@ const ReferralPage = (props) => {
                                     <StyledTableCell align="left">{(row.createdAt.split('T'))[0]}</StyledTableCell>
                                 </StyledTableRow>
                             ))}
-                            </TableBody>
+                            </TableBody> */}
                         </Table>
                     </TableContainer>
-                </ContainerComponentTransparent>
+                </ContainerComponent>
 
         </div>
     );

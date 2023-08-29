@@ -1,0 +1,29 @@
+@import '../../style/color.scss';
+
+.custom-container-component {
+    // background: rgba(0, 0, 0, 0);
+    border: 1px solid $content-border-color2;
+    // border-radius: 10px;
+    padding: 20px;
+    /* overflow: hidden; */
+    /* Frame 18 */
+
+//background: rgba(0, 0, 0, 0.24);
+/* White Shadow */
+box-shadow: 11px 10px 30px rgba(255, 255, 255, 0.1);
+
+
+/* Rectangle 1 */
+
+//background: linear-gradient(271.77deg, rgba(56, 207, 80, 0.3) -29.44%, rgba(46, 243, 196, 0.3) 29.31%, rgba(191, 86, 246, 0.3) 82.73%);
+
+/* blur */
+// background: radial-gradient(70% 70% at 50% 50%, #134E40 0%, rgba(46, 243, 196, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+// border-radius: 10px;
+
+
+background: radial-gradient(70% 70% at 50% 50%, rgba(19, 78, 64, 0.3) 0%, rgba(46, 243, 196, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+//border-radius: 10px;
+
+
+}

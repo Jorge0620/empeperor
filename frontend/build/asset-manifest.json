@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.74c7f612.css",
-    "main.js": "/static/js/main.58b19de3.js",
+    "main.css": "/static/css/main.e897d7be.css",
+    "main.js": "/static/js/main.fbbab996.js",
     "static/js/922.36241dc3.chunk.js": "/static/js/922.36241dc3.chunk.js",
     "static/media/moonspace.png": "/static/media/moonspace.7a9ca02bb1d1723397e5.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
@@ -35,7 +35,6 @@
     "static/media/fa-brands-400.woff": "/static/media/fa-brands-400.2285773e6b4b172f07d9.woff",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.1551f4f60c37af51121f.woff2",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.d878b0a6a1144760244f.woff2",
-    "static/media/bgemp.png": "/static/media/bgemp.83570c4eaa56fa513e08.png",
     "static/media/Uniswap-UNI.png": "/static/media/Uniswap-UNI.09e10aa84ecc06d4ab4b.png",
     "static/media/pancakeswap-095a205c.png": "/static/media/pancakeswap-095a205c.477c86ab5e6c037ce6ff.png",
     "static/media/ALBA____.TTF": "/static/media/ALBA____.b755c7d324f37b330b62.TTF",
@@ -57,7 +56,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.74c7f612.css",
-    "static/js/main.58b19de3.js"
+    "static/css/main.e897d7be.css",
+    "static/js/main.fbbab996.js"
   ]
 }

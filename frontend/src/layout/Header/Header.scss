@@ -32,6 +32,19 @@ $scale-var: 1600 / 2560;
     @media only screen and (min-width: 1600px) {
         height: 80px;
     }
+    .wallet-connect-btn {
+        margin-top: 0 !important;
+        font-size: 14px !important;
+        padding: 0px 10px !important;
+        @media only screen and (min-width: 800px) {
+            font-size: 16px !important;
+            padding: 0px 12px !important;
+        }
+        @media only screen and (min-width: 1600px) {
+            font-size: 20px !important;
+            padding: 2px 14px !important;
+        }
+    }
     a {
         text-decoration: none;
     }
@@ -183,13 +196,17 @@ $scale-var: 1600 / 2560;
         .middle-logo {
             padding: 0;
             height: 100%;
-            display: none;
+            
             justify-content: center;
             align-items: center;
             margin-left: 50px;
-            @media only screen and (min-width: 600px) {
-                display: flex;
+            .sidebar-logo {
+                display: none;
+                @media only screen and (min-width: 600px) {
+                    display: flex;
+                }
             }
+            
         }
         .money-group {
             padding-right: 18px;

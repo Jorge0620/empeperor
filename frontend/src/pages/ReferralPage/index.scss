@@ -21,6 +21,27 @@
             font-size: 40px;
         }
     }
+    table {
+        min-width: unset !important;
+        width: min-content;
+        th {
+            color: white;
+            width: 200px;
+            white-space: nowrap;
+            /* Frame 24 */
+
+            background: radial-gradient(70% 70% at 50% 50%, #636363 0%, rgba(120, 120, 120, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(67, 66, 83, 0.2);
+
+        }
+        td {
+            white-space: nowrap;
+            /* Frame 24 */
+            background: radial-gradient(70% 70% at 50% 50%, rgba(99, 99, 99, 0.3) 0%, rgba(120, 120, 120, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(67, 66, 83, 0.2);
+
+        }
+        border-collapse:separate;
+        border-spacing: 10px 15px;
+    }
     .content-title {
         color: $liner-color2;
         font-size: 30px;

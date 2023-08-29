@@ -1,16 +1,26 @@
 export const titleDescriptions = {
     home: {
-        title: "empeperor/gambling",
+        title: "Empeperor",
         description: "Experience the excitement of token minting and gambling at our site. Mint your own personalized tokens and use them to participate in a variety of games, all while enjoying a safe and secure platform.",
         tags: "crash game, crypto crash game, gambling games, earn crypto, empeperor"
     },
     casino: {
-        title: "empeperor/gambling",
+        title: "Empeperor",
         description: "Experience the excitement of token minting and gambling at our site. Mint your own personalized tokens and use them to participate in a variety of games, all while enjoying a safe and secure platform.",
         tags: "crash game, crypto crash game, gambling games, earn crypto, empeperor"
     },
     sportsBetting: {
-        title: "empeperor/gambling",
+        title: "Empeperor",
+        description: "Experience the excitement of token minting and gambling at our site. Mint your own personalized tokens and use them to participate in a variety of games, all while enjoying a safe and secure platform.",
+        tags: "crash game, crypto crash game, gambling games, earn crypto, empeperor"
+    },
+    referral: {
+        title: "Empeperor",
+        description: "Invite your friends to the Moon Crash Game and start earning referral bonus for every bet your invitees win. Subscribe for free and start to earn today.",
+        tags: "referral, referral program, invite friends, crash game, bonus"
+    },
+    escrow: {
+        title: "Empeperor",
         description: "Experience the excitement of token minting and gambling at our site. Mint your own personalized tokens and use them to participate in a variety of games, all while enjoying a safe and secure platform.",
         tags: "crash game, crypto crash game, gambling games, earn crypto, empeperor"
     },
@@ -48,12 +58,8 @@ export const titleDescriptions = {
         title: "Bankroll Earning | Casino House Earning | Profit Sharing",
         description: "With Moon Crash Game you can be part of the casino house. Invest in the Bankroll and win when the house wins. Crash Game bankroll is an easy way to earn passively.",
         tags: "bankroll, casino house, bankroll earning, crash game"
-    },
-    referral: {
-        title: "Crash Game Referral | Referral Program | Invite Friends to Earn",
-        description: "Invite your friends to the Moon Crash Game and start earning referral bonus for every bet your invitees win. Subscribe for free and start to earn today.",
-        tags: "referral, referral program, invite friends, crash game, bonus"
     }
+    
 }
 
 export const WhitePaperLink = 'https://wp.empeperor.com/'
