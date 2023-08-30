@@ -1,6 +1,6 @@
 //export const serverUrl = 'https://xcvxcvbxcvuxlaie69l54dfgdvukxevbgugcxv478m.mooncrash.com/';
 //export const serverUrl = './';
-export const serverUrl = 'https://empeperor.com/empeperor/';
+export const serverUrl = 'https://app.empeperor.com/empeperor/';
 //export const serverUrl = 'http://localhost:3002/empeperor/';
 export const tokenIDs = {
     BNB: 1,
