@@ -10,7 +10,7 @@ import { getUsdBalance } from '../../actions/gameActions'
 import { getBalance, getUSDBalance } from '../../utils/interact.js';
 
 const AccountManager = (props) => {
-    const { setTokenBalance, tokenBalance, setTokenUsdBalance, getUserData, setUsedRefCode, getUsdBalance, usedRefCode, initUserData } = props;
+    const { setTokenBalance, tokenBalance, walletAddress, getUserData, setUsedRefCode, getUsdBalance, usedRefCode, initUserData } = props;
     const { useChainId, useAccounts, useIsActivating, useIsActive, useProvider, useENSNames } = metaMaskHooks
     const accounts = useAccounts()
     useEffect(() => {
@@ -34,10 +34,10 @@ const AccountManager = (props) => {
         const initAccount = async () => {
             
             let _balance = 0;
-            if(accounts && accounts.length > 0) {
-                console.log("account changed!! ", accounts)
-                const user = await getUserData(accounts[0], usedRefCode, true)
-                _balance = await getBalance(accounts[0])
+            if(walletAddress && walletAddress !== '') {
+                
+                const user = await getUserData(walletAddress, usedRefCode, true)
+                _balance = await getBalance(walletAddress)
             }
             else {
                 initUserData()
@@ -45,7 +45,7 @@ const AccountManager = (props) => {
             setTokenBalance(_balance)
         }
         initAccount()
-    }, [accounts])
+    }, [walletAddress])
 
     useEffect(() => {
         getUsdBalance(tokenBalance)
@@ -62,7 +62,8 @@ const AccountManager = (props) => {
 const mapStateToProps  = (state) => (
   {
     usedRefCode: state.userData.usedRefCode,
-    tokenBalance: state.userData.tokenBalance
+    tokenBalance: state.userData.tokenBalance,
+    walletAddress: state.userData.walletAddress
   }
 )
 

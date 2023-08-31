@@ -6,10 +6,19 @@ import {
     SET_WITHDRAWABLE_BALANCE,
     SET_USERDATA,
     SET_USED_REFCODE,
-    INIT_USER_DATA
+    INIT_USER_DATA,
+    SET_WALLET_ADDRESS
 } from '../utils/types'
 import { json } from 'react-router-dom'
 
+
+export const setWalletAddress = (address) => dispatch => {
+    //console.log("showTxSignModal")
+    dispatch({
+        type: SET_WALLET_ADDRESS,
+        payload: address
+    })
+}
 export const setTokenBalance = (amount) => dispatch => {
     //console.log("showTxSignModal")
     dispatch({

@@ -5,7 +5,6 @@ import { ImCancelCircle } from "react-icons/im";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 import './index.scss';
-import { metaMaskHooks } from '../../connectors/Metamask'
 import { changeCurrentPage, popup, setLoadingWithdraw } from '../../actions/gameActions'
 import { getUserData, setTokenBalance, setTokenUsdBalance } from '../../actions/userActions'
 
@@ -13,15 +12,11 @@ import { getGasFee, getBalance, getUSDBalance } from "../../utils/interact";
 import { withdraw } from '../../actions/transactinActions'
 
 const WithdrawModal = (props) => {
-    const { show, onHide, withdrawableBalance, getUserData, loadingWithdraw, setLoadingWithdraw, setTokenBalance, setTokenUsdBalance } = props
+    const { show, onHide, withdrawableBalance, getUserData, loadingWithdraw, setLoadingWithdraw, setTokenBalance, walletAddress } = props
     const [withdrawAmount, setWithdrawAmount] = useState(0);
     const [gasFee, setGasFee] = useState(0);
-    const [balance, setBalance] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
     const [showResult, setShowResult] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-    const { useAccounts } = metaMaskHooks
-    const accounts = useAccounts()
 
     useEffect(() => {
         console.log("show: ", show)
@@ -43,14 +38,14 @@ const WithdrawModal = (props) => {
             return
         }
         setLoadingWithdraw(true);
-        const result = await withdraw(accounts[0], withdrawAmount)
+        const result = await withdraw(walletAddress, withdrawAmount)
         setLoadingWithdraw(false);
         setShowResult(true)
         console.log("result: ", result)
         if(result.status === "success") {
             setIsSuccess(true)
-            getUserData(accounts[0])
-            const _balance = await getBalance(accounts[0])
+            getUserData(walletAddress)
+            const _balance = await getBalance(walletAddress)
             setTokenBalance(_balance)
         }
         else {
@@ -118,7 +113,8 @@ const WithdrawModal = (props) => {
 const mapStateToProps = (state) => (
     {
         withdrawableBalance: state.userData.withdrawableBalance,
-        loadingWithdraw: state.gameData.loadingWithdraw
+        loadingWithdraw: state.gameData.loadingWithdraw,
+        walletAddress: state.userData.walletAddress
     }
 )
 export default connect(mapStateToProps, {changeCurrentPage, setLoadingWithdraw, getUserData, setTokenBalance, setTokenUsdBalance})(WithdrawModal)

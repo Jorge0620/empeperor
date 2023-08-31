@@ -32,7 +32,6 @@ const userSchema = mongoose.Schema(
     refCode: {
       type: String,
       trim: true,
-      unique: true,
       default: ""
     },
     paidForRefer: {

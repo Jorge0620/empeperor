@@ -7,6 +7,7 @@ import Favicon from 'react-favicon'
 import { useWeb3React, initializeConnector, Web3ReactProvider } from '@web3-react/core'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Buffer } from 'buffer';
 
 import { metaMask, metaMaskHooks } from './connectors/Metamask'
 import PageRoutes from './PageRoutes';
@@ -25,6 +26,8 @@ import {serverUrl} from './utils/constant'
 axios.defaults.withCredentials = false;
 axios.defaults.crossDomain = true;
 axios.defaults.baseURL = serverUrl;
+
+global.Buffer = Buffer;
 
 const connectors = [
   [metaMask, metaMaskHooks],

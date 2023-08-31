@@ -3,7 +3,8 @@ import {
     
     INIT_USER_DATA,
     SET_USERDATA,
-    SET_USED_REFCODE
+    SET_USED_REFCODE,
+    SET_WALLET_ADDRESS
 } from '../../utils/types';
 
 const initialState = {
@@ -14,7 +15,8 @@ const initialState = {
     refCode: "",
     usedRefCode: "",
     rank: 0,
-    refRewards: []
+    refRewards: [],
+    walletAddress: ""
 }
 const userReducer = (state = initialState, action) => {
     switch(action.type){
@@ -46,6 +48,11 @@ const userReducer = (state = initialState, action) => {
         return {
             ...state,
             usedRefCode: action.payload
+        }
+        case SET_WALLET_ADDRESS:
+        return {
+            ...state,
+            walletAddress: action.payload
         }
         
         default: return state

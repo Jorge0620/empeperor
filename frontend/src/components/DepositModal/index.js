@@ -5,7 +5,6 @@ import { ImCancelCircle } from "react-icons/im";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 import './index.scss';
-import { metaMaskHooks } from '../../connectors/Metamask'
 import { changeCurrentPage, popup, setLoadingDeposit } from '../../actions/gameActions'
 import { getUserData, setTokenBalance, setTokenUsdBalance, checkServerConnection } from '../../actions/userActions'
 
@@ -14,21 +13,12 @@ import { writeDepositResultToServer } from '../../actions/transactinActions'
 import { getGasFee, deposit, getBalance } from "../../utils/interact";
 
 const DepositModal = (props) => {
-    const { show, onHide, tokenBalance, setLoadingDeposit, loadingDeposit, getUserData, setTokenBalance, setTokenUsdBalance } = props
+    const { show, onHide, tokenBalance, setLoadingDeposit, loadingDeposit, getUserData, setTokenBalance, walletAddress } = props
     const [depositAmount, setDepositAmount] = useState(0);
     const [sentAmount, setSentAmount] = useState(0);
     const [gasFee, setGasFee] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
     const [showResult, setShowResult] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-    const [txHash, setTxHash] = useState("");
-    const [tokenAmount, setTokenAmount] = useState({
-        value: 0,
-        error: null    
-    });
-    const [transactionFee, setTransactionFee] = useState(0);
-    const { useAccounts } = metaMaskHooks
-    const accounts = useAccounts()
     useEffect(() => {
         console.log("show: ", show)
         const initGasfee = async () => {
@@ -39,32 +29,28 @@ const DepositModal = (props) => {
     }, [show]);
 
     const handleDeposit = async () => {
-        console.log("asdf")
         if(Number(depositAmount) >= Number(tokenBalance)) {
             popup("insufficient balance!")
             return
         }
-        
         const netStatus = await checkServerConnection()
         if(!netStatus) {
             popup('The connection to the server has been lost.')
             return
         }
-        console.log("deposit")
         setLoadingDeposit(true)
         setSentAmount(depositAmount)
         let result = true;
-        result = await deposit(accounts[0], depositAmount)
+        result = await deposit(walletAddress, depositAmount)
         if(result) {
-            result = await writeDepositResultToServer(accounts[0], depositAmount)
+            result = await writeDepositResultToServer(walletAddress, depositAmount)
         }
-        //result = await writeDepositResultToServer(accounts[0], depositAmount)
         setLoadingDeposit(false);
         setShowResult(true)
         if(result === true) {
             setIsSuccess(true)
-            getUserData(accounts[0])
-            const _balance = await getBalance(accounts[0])
+            getUserData(walletAddress)
+            const _balance = await getBalance(walletAddress)
             setTokenBalance(_balance)
         }
         else {
@@ -135,7 +121,8 @@ const DepositModal = (props) => {
 const mapStateToProps = (state) => (
     {
         tokenBalance: state.userData.tokenBalance,
-        loadingDeposit: state.gameData.loadingDeposit
+        loadingDeposit: state.gameData.loadingDeposit,
+        walletAddress: state.userData.walletAddress
     }
 )
 export default connect(mapStateToProps, {changeCurrentPage, setLoadingDeposit, getUserData, setTokenBalance, setTokenUsdBalance})(DepositModal)

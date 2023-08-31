@@ -33,7 +33,6 @@ import './index.scss'
 import '../../style/base.scss'
 
 const rankImgs = [IronRankImg, BronzeRankImg, SilverRankImg, GoldRankImg, PlatinumRankImg, JadeRankImg, SapphireRankImg, RubyRankImg, EmeraldRankImg, DiamondRankImg]
-const { useChainId, useAccounts, useIsActivating, useIsActive, useProvider, useENSNames } = metaMaskHooks
 
 const Injected = new InjectedConnector({
     supportedChainIds: [1, 3, 4, 5, 42]
@@ -44,11 +43,9 @@ const NullInjected = new InjectedConnector({
 });
 
 const ReferralPage = (props) => {
-    const { showDepositModal, showWithdrawModal, tokenBalance, tokenUsdBalance, withdrawableBalance, rank, refRewards, accumulatedReferral, refCode, getUsdBalance } = props
+    const { showDepositModal, showWithdrawModal, tokenBalance, tokenUsdBalance, withdrawableBalance, rank, refRewards, accumulatedReferral, refCode, walletAddress } = props
 
-    const accounts = useAccounts()
     const [referralLink, setReferralLink] = useState("")
-    const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
     useEffect(() => {
         if(refCode !== '') {
             setReferralLink(window.location.origin + '/home?ref=' + refCode)
@@ -130,7 +127,7 @@ const ReferralPage = (props) => {
     }
 
     const clickDepositBtn = () => {
-        if(accounts && accounts.length > 0) {
+        if(walletAddress && walletAddress !== '') {
             showDepositModal()
         }
         else {
@@ -139,7 +136,7 @@ const ReferralPage = (props) => {
     }
 
     const clickWithdrwaBtn = () => {
-        if(accounts && accounts.length > 0) {
+        if(walletAddress && walletAddress !== '') {
             showWithdrawModal()
         }
         else {
@@ -148,7 +145,7 @@ const ReferralPage = (props) => {
     }
 
     const clicCopyRefCodeBtn = () => {
-        if(accounts && accounts.length > 0 && referralLink !== '') {
+        if(walletAddress && walletAddress !== '' && referralLink !== '') {
             copyTextToClipboard(referralLink)
         }
         else {
@@ -282,8 +279,8 @@ const mapStateToProps = (state) => ({
     accumulatedReferral: state.userData.accumulatedReferral,
     refCode: state.userData.refCode,
     rank: state.userData.rank,
-    refRewards: state.userData.refRewards
-    
+    refRewards: state.userData.refRewards,
+    walletAddress: state.userData.walletAddress
 });
 export default connect(mapStateToProps, {
     showDepositModal, showWithdrawModal, getUsdBalance
