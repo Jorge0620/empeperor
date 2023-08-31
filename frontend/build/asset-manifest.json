@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e897d7be.css",
-    "main.js": "/static/js/main.296e7058.js",
-    "static/js/922.36241dc3.chunk.js": "/static/js/922.36241dc3.chunk.js",
+    "main.css": "/static/css/main.6ff6fdcb.css",
+    "main.js": "/static/js/main.dd72d830.js",
+    "static/js/922.4a0d19b2.chunk.js": "/static/js/922.4a0d19b2.chunk.js",
     "static/media/moonspace.png": "/static/media/moonspace.7a9ca02bb1d1723397e5.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
@@ -56,7 +56,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.e897d7be.css",
-    "static/js/main.296e7058.js"
+    "static/css/main.6ff6fdcb.css",
+    "static/js/main.dd72d830.js"
   ]
 }
